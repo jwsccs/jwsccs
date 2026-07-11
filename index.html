@@ -375,13 +375,111 @@ body.modal-open{overflow:hidden}
 .badge{display:inline-block;color:#006cff;font-size:11px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:12px}
 @media(max-width:760px){.ai-hero,.ai-grid{grid-template-columns:1fr}}
 
+
+.media-section{border-top:1px solid var(--line);padding:72px 0}
+.media-head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:28px}
+.media-head h2{font-size:clamp(44px,5.2vw,78px);line-height:.82;letter-spacing:-.075em;font-weight:500}
+.media-head p{color:#a9adb5;font-size:16px;line-height:1.45;max-width:520px}
+.media-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
+.media-grid .project-card{aspect-ratio:16/10}
+.music-card.image-card{padding:0;min-height:360px}
+.music-card.image-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.music-card.image-card:hover img{transform:scale(1.035)}
+.music-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,6,8,.96),rgba(5,6,8,.48) 45%,rgba(5,6,8,.05))}
+.music-copy{position:relative;z-index:2;margin-top:auto;padding:34px}
+@media(max-width:1000px){.media-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.media-section{padding:52px 0}.media-head{grid-template-columns:1fr;gap:18px;margin-bottom:18px}.media-grid{grid-template-columns:1fr}.media-grid .project-card{aspect-ratio:16/9}.music-card.image-card{min-height:280px}.music-copy{padding:24px}}
+
+
+/* v28 music card layout */
+.music-grid{
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+}
+@media(max-width:1000px){
+  .music-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+@media(max-width:760px){
+  .music-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
+
+.ai-film-section{border-top:1px solid var(--line);padding:72px 0}
+.ai-film-head{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end;margin-bottom:28px}
+.ai-film-head h2{font-size:clamp(44px,5.2vw,78px);line-height:.82;letter-spacing:-.075em;font-weight:500}
+.ai-film-head p{color:#a9adb5;font-size:16px;line-height:1.45;max-width:520px}
+.ai-film-grid{display:grid;grid-template-columns:1fr}
+.ai-film-card{aspect-ratio:16/7}
+.ai-film-card .project-content h3{font-size:clamp(54px,7vw,110px)}
+@media(max-width:760px){
+  .ai-film-section{padding:52px 0}
+  .ai-film-head{grid-template-columns:1fr;gap:18px;margin-bottom:18px}
+  .ai-film-card{aspect-ratio:16/9}
+  .ai-film-card .project-content h3{font-size:clamp(32px,10vw,48px)}
+}
+
+
+/* v29.2 music artwork fit */
+.music-card.image-card{
+  min-height:410px;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background:#07090d;
+}
+
+.music-card.image-card > img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain !important;
+  object-position:center center !important;
+  transform:none !important;
+  background:#07090d;
+  padding:14px;
+}
+
+.music-card.image-card:hover > img{
+  transform:scale(1.015) !important;
+}
+
+.music-overlay{
+  background:
+    linear-gradient(to top,
+      rgba(5,6,8,.98) 0%,
+      rgba(5,6,8,.88) 25%,
+      rgba(5,6,8,.25) 58%,
+      rgba(5,6,8,.05) 100%);
+}
+
+.music-copy{
+  padding:26px;
+}
+
+@media(max-width:760px){
+  .music-card.image-card{
+    min-height:340px;
+  }
+  .music-card.image-card > img{
+    padding:10px;
+  }
+  .music-copy{
+    padding:22px;
+  }
+}
+
 </style>
 </head>
 <body>
 <div class="bg"></div>
 <header class="wrap">
  <a class="logo" href="#">jwsccs.com</a>
- <nav><a href="#work">Work</a><a href="#ailab">AI Lab</a><a href="#music">Music</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+ <nav><a href="#work">Work</a><a href="#musicvideos">Music Videos</a><a href="#aifilms">AI Films</a><a href="#ailab">AI Lab</a><a href="#music">Music</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
  <a class="talk" href="#contact">Let’s Talk</a>
 </header>
 
@@ -705,10 +803,79 @@ title="JS_2024"></iframe>
   <em>View project →</em>
  </div>
 </button>
+
+<button class="project-card support" type="button" data-video="l5lSTdHjVOY" data-youtube="https://www.youtube.com/watch?v=l5lSTdHjVOY">
+<img src="https://img.youtube.com/vi/l5lSTdHjVOY/hqdefault.jpg" alt="Chevrolet Blazer EV">
+<div class="project-overlay"></div><div class="project-content"><p>CHEVROLET</p><h3>Blazer EV</h3><span>Style and Performance</span><em>View project →</em></div></button>
+
+<button class="project-card support" type="button" data-video="jN8YBLQn0Q4" data-youtube="https://www.youtube.com/watch?v=jN8YBLQn0Q4">
+<img src="https://img.youtube.com/vi/jN8YBLQn0Q4/hqdefault.jpg" alt="Buick Avista">
+<div class="project-overlay"></div><div class="project-content"><p>BUICK</p><h3>Avista</h3><span>Reveal Film</span><em>View project →</em></div></button>
+
+<button class="project-card support" type="button" data-video="HWzZ327kt2Q" data-youtube="https://www.youtube.com/watch?v=HWzZ327kt2Q">
+<img src="https://img.youtube.com/vi/HWzZ327kt2Q/hqdefault.jpg" alt="Cadillac CTS-V">
+<div class="project-overlay"></div><div class="project-content"><p>CADILLAC</p><h3>CTS-V</h3><span>The Most Capable V-Series Ever</span><em>View project →</em></div></button>
+
+<button class="project-card support" type="button" data-vimeo="4783804" data-vimeo-url="https://vimeo.com/4783804" aria-label="Play Gwinnett Place Nissan 30">
+  <img src="https://vumbnail.com/4783804.jpg" alt="Gwinnett Place Nissan 30" loading="eager" decoding="async">
+  <div class="project-overlay"></div>
+  <div class="project-content">
+    <p>NISSAN</p>
+    <h3>Gwinnett Place Nissan 30</h3>
+    <span>Commercial</span>
+    <em>View project →</em>
+  </div>
+</button>
+
+
 </div>
 </div></section>
 
 
+
+
+<section class="media-section reveal-on-scroll" id="musicvideos">
+<div class="wrap">
+<div class="media-head"><div><p class="section-label">Music Videos & Narrative</p><h2>Independent stories, music, and visual experimentation.</h2></div><p>Selected music videos and narrative work spanning directing, cinematography, editorial, color, compositing, and finishing.</p></div>
+<div class="media-grid">
+<button class="project-card support" type="button" data-video="asLigbrqXSE" data-youtube="https://www.youtube.com/watch?v=asLigbrqXSE"><img src="https://img.youtube.com/vi/asLigbrqXSE/hqdefault.jpg" alt="Dial81"><div class="project-overlay"></div><div class="project-content"><p>MUSIC VIDEO</p><h3>Dial81</h3><span>Official Music Video</span><em>View project →</em></div></button>
+<button class="project-card support" type="button" data-video="6GjGn4SsDXs" data-youtube="https://www.youtube.com/watch?v=6GjGn4SsDXs"><img src="https://img.youtube.com/vi/6GjGn4SsDXs/hqdefault.jpg" alt="Sisters Lucas"><div class="project-overlay"></div><div class="project-content"><p>MUSIC VIDEO</p><h3>Sisters Lucas</h3><span>To What and What Of</span><em>View project →</em></div></button>
+<button class="project-card support" type="button" data-video="GWPUXMf7xS4" data-youtube="https://www.youtube.com/watch?v=GWPUXMf7xS4"><img src="https://img.youtube.com/vi/GWPUXMf7xS4/hqdefault.jpg" alt="Abrasive Method Rescue"><div class="project-overlay"></div><div class="project-content"><p>MUSIC VIDEO</p><h3>Abrasive Method</h3><span>Rescue</span><em>View project →</em></div></button>
+<button class="project-card support" type="button" data-video="uRSGpa8asSw" data-youtube="https://www.youtube.com/watch?v=uRSGpa8asSw"><img src="https://img.youtube.com/vi/uRSGpa8asSw/hqdefault.jpg" alt="Mobil Logix Mystery"><div class="project-overlay"></div><div class="project-content"><p>MUSIC VIDEO</p><h3>Mobil / Logix</h3><span>Mystery</span><em>View project →</em></div></button>
+<button class="project-card support" type="button" data-video="WW9Bi4SUWqU" data-youtube="https://www.youtube.com/watch?v=WW9Bi4SUWqU"><img src="https://img.youtube.com/vi/WW9Bi4SUWqU/hqdefault.jpg" alt="Progress Report Wake Up"><div class="project-overlay"></div><div class="project-content"><p>MUSIC VIDEO</p><h3>Progress Report</h3><span>Wake Up</span><em>View project →</em></div></button>
+<button class="project-card support" type="button" data-video="Akmn_eoglxY" data-youtube="https://www.youtube.com/watch?v=Akmn_eoglxY"><img src="https://img.youtube.com/vi/Akmn_eoglxY/hqdefault.jpg" alt="Rescue Bit"><div class="project-overlay"></div><div class="project-content"><p>NARRATIVE</p><h3>Rescue Bit</h3><span>Short Film</span><em>View project →</em></div></button>
+</div></div></section>
+
+
+<section class="ai-film-section reveal-on-scroll" id="aifilms">
+  <div class="wrap">
+    <div class="ai-film-head">
+      <div>
+        <p class="section-label">AI Films</p>
+        <h2>Experimental filmmaking with emerging AI tools.</h2>
+      </div>
+      <p>Original narrative and visual experiments exploring AI-assisted direction, image generation, motion, editing, sound, and cinematic worldbuilding.</p>
+    </div>
+    <div class="ai-film-grid">
+      <button class="project-card ai-film-card" type="button"
+              data-video="QnDhmXu1y4Y"
+              data-youtube="https://www.youtube.com/watch?v=QnDhmXu1y4Y"
+              aria-label="Play The Escape">
+        <img src="https://img.youtube.com/vi/QnDhmXu1y4Y/maxresdefault.jpg"
+             onerror="if(!this.dataset.fallback){this.dataset.fallback='hq';this.src='https://img.youtube.com/vi/QnDhmXu1y4Y/hqdefault.jpg';}else{this.src='https://img.youtube.com/vi/QnDhmXu1y4Y/mqdefault.jpg';}"
+             alt="The Escape — AI Experimental Film"
+             loading="lazy" decoding="async">
+        <div class="project-overlay"></div>
+        <div class="project-content">
+          <p>AI FILM</p>
+          <h3>The Escape</h3>
+          <span>Experimental Short Film</span>
+          <em>View project →</em>
+        </div>
+      </button>
+    </div>
+  </div>
+</section>
 
 <section class="ai-section reveal-on-scroll" id="ailab">
 <div class="wrap">
@@ -745,22 +912,26 @@ title="JS_2024"></iframe>
       <p>Independent music, production experiments, and channel-based releases developed alongside film and visual work.</p>
     </div>
 
-    <div class="music-grid">
-      
-<a class="music-card" href="https://youtube.com/@goldm3chanical?si=X09bBTaq00pRpIjc" target="_blank" rel="noopener noreferrer">
-<img src="Screenshot 2026-07-10 at 5.26.41 PM.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45">
-<div style="position:relative;margin-top:auto">
-<span class="badge">YouTube Channel</span>
-<h3>Gold M3chanical</h3><p>Original music and releases.</p><span>Visit channel ↗</span></div></a>
+    
+<div class="music-grid">
+<a class="music-card image-card" href="https://youtube.com/@goldm3chanical?si=X09bBTaq00pRpIjc" target="_blank" rel="noopener noreferrer">
+<img src="assets/gold-m3chanical.png" alt="Gold M3chanical"><div class="music-overlay"></div><div class="music-copy"><span class="badge">YouTube Channel</span><h3>Gold M3chanical</h3><p>Original music, releases, and ongoing creative audio development.</p><span>Visit channel ↗</span></div></a>
+<a class="music-card image-card" href="https://youtube.com/@gullybeatsai?si=Pj8lG6mwH0uZ9EEE" target="_blank" rel="noopener noreferrer">
+<img src="assets/gully-beats-ai.png" alt="Gully BeAts AI"><div class="music-overlay"></div><div class="music-copy"><span class="badge">AI Music</span><h3>Gully BeAts AI</h3><p>AI-assisted music, visual experimentation, and creative development.</p><span>Visit channel ↗</span></div></a>
 
-<a class="music-card secondary" href="https://youtube.com/@gullybeatsai?si=Pj8lG6mwH0uZ9EEE" target="_blank" rel="noopener noreferrer">
-<img src="Screenshot 2026-07-10 at 5.27.18 PM.png" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45">
-<div style="position:relative;margin-top:auto">
-<span class="badge">AI Music</span>
-<h3>Gully BeAts AI</h3><p>AI-assisted music and visuals.</p><span>Visit channel ↗</span></div></a>
-
+  <a class="music-card image-card" href="https://music.apple.com/us/album/eftroy/1805512940?i=1805512942" target="_blank" rel="noopener noreferrer">
+    <img src="assets/eliphonthorse-cover.png" alt="ELIPHONTHORSE - eftroy">
+    <div class="music-overlay"></div>
+    <div class="music-copy">
+      <span class="badge">Apple Music</span>
+      <h3>Eliphonthorse</h3>
+      <p>eftroy</p>
+      <span>Listen on Apple Music ↗</span>
     </div>
-  </div>
+  </a>
+</div>
+
+</div>
 </section>
 
 <section class="contact reveal-on-scroll"><div class="contact-row wrap" id="contact">
@@ -798,6 +969,15 @@ title="JS_2024"></iframe>
   document.body.classList.remove('modal-open');
  }
  document.querySelectorAll('.project-card[data-video]').forEach(card=>card.addEventListener('click',()=>openVideo(card.dataset.video,card.dataset.youtube)));
+ document.querySelectorAll('.project-card[data-vimeo]').forEach(card=>card.addEventListener('click',()=>{
+  fallback.href=card.dataset.vimeoUrl;
+  fallback.textContent='Open on Vimeo ↗';
+  player.src=`https://player.vimeo.com/video/${card.dataset.vimeo}?autoplay=1&title=0&byline=0&portrait=0`;
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open');
+  close.focus();
+ }));
  close.addEventListener('click',closeVideo);
  modal.addEventListener('click',e=>{if(e.target===modal)closeVideo()});
  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('open'))closeVideo()});
