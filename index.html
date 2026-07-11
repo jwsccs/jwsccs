@@ -473,6 +473,52 @@ body.modal-open{overflow:hidden}
   }
 }
 
+
+/* v29.3 music text hierarchy fix */
+.music-copy{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:0;
+}
+
+.music-copy .badge{
+  position:relative !important;
+  top:auto !important;
+  left:auto !important;
+  display:block;
+  margin:0 0 14px 0 !important;
+  line-height:1.2;
+  z-index:3;
+}
+
+.music-copy h3{
+  position:relative;
+  margin:0;
+  font-size:clamp(30px,3.2vw,50px);
+  line-height:.94;
+  letter-spacing:-.05em;
+  z-index:2;
+}
+
+.music-copy p{
+  margin-top:10px;
+  line-height:1.35;
+}
+
+.music-copy > span:last-child{
+  margin-top:14px;
+}
+
+@media(max-width:760px){
+  .music-copy .badge{
+    margin-bottom:10px !important;
+  }
+  .music-copy h3{
+    font-size:clamp(28px,9vw,42px);
+  }
+}
+
 </style>
 </head>
 <body>
