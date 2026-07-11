@@ -519,6 +519,89 @@ body.modal-open{overflow:hidden}
   }
 }
 
+
+/* v29.4 mobile header + role spacing fix */
+@media(max-width:900px){
+  header.wrap{
+    display:grid;
+    grid-template-columns:1fr auto;
+    grid-template-areas:
+      "logo talk"
+      "nav nav";
+    row-gap:10px;
+    padding-top:12px;
+    padding-bottom:12px;
+  }
+
+  header .logo{
+    grid-area:logo;
+    align-self:center;
+  }
+
+  header .talk{
+    grid-area:talk;
+    display:none;
+  }
+
+  header nav{
+    grid-area:nav;
+    width:100%;
+    display:flex;
+    flex-wrap:nowrap;
+    gap:22px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    padding:2px 0 6px;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  header nav::-webkit-scrollbar{
+    display:none;
+  }
+
+  header nav a{
+    flex:0 0 auto;
+    line-height:1;
+  }
+
+  .roles{
+    display:flex !important;
+    align-items:center;
+    justify-content:space-between;
+    width:100%;
+    gap:0;
+    overflow:hidden;
+    white-space:nowrap;
+    font-size:clamp(5px,1.45vw,7px);
+    letter-spacing:-.02em;
+  }
+
+  .roles span{
+    flex:0 0 auto;
+    display:inline-block;
+  }
+}
+
+@media(max-width:560px){
+  header.wrap{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "logo"
+      "nav";
+  }
+
+  header nav{
+    gap:18px;
+    font-size:8px;
+  }
+
+  .roles{
+    font-size:clamp(4.6px,1.42vw,6.2px);
+  }
+}
+
 </style>
 </head>
 <body>
