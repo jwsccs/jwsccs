@@ -602,6 +602,22 @@ body.modal-open{overflow:hidden}
   }
 }
 
+
+/* v30 experimental music grid */
+.music-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+}
+@media(max-width:1180px){
+  .music-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  }
+}
+@media(max-width:760px){
+  .music-grid{
+    grid-template-columns:1fr !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -1035,7 +1051,7 @@ title="JS_2024"></iframe>
   <div class="wrap">
     <div class="music-head">
       <div>
-        <p class="section-label">Music</p>
+        <p class="section-label">Experimental Music</p>
         <h2>Original music and creative audio projects.</h2>
       </div>
       <p>Independent music, production experiments, and channel-based releases developed alongside film and visual work.</p>
@@ -1058,6 +1074,17 @@ title="JS_2024"></iframe>
       <span>Listen on Apple Music ↗</span>
     </div>
   </a>
+
+<a class="music-card image-card" href="https://chromesunrise.bandcamp.com/album/synth-city" target="_blank" rel="noopener noreferrer">
+  <img src="assets/chrome-sunrise-synth-city.png" alt="Chrome Sunrise — Synth City">
+  <div class="music-overlay"></div>
+  <div class="music-copy">
+    <span class="badge">Bandcamp</span>
+    <h3>Chrome Sunrise</h3>
+    <p>Synth City</p>
+    <span>Listen on Bandcamp ↗</span>
+  </div>
+</a>
 </div>
 
 </div>
