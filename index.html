@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Johnathan Schweitzer | Creative Portfolio</title>
-<!-- v34.2 updated Buick Brand Film YouTube link -->
+<!-- v35.1 preserved Vimeo controls while keeping mobile-friendly autoplay -->
 <!-- publish-ready build using exact v18 thumbnail system -->
 <style>
 @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
@@ -618,6 +618,51 @@ body.modal-open{overflow:hidden}
   }
 }
 
+
+/* v35 mobile Vimeo + landscape grid fixes */
+.reel-frame iframe{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+@media (max-width:900px) and (orientation:landscape){
+  .media-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+    gap:2px !important;
+  }
+
+  .media-grid .project-card,
+  .media-grid .project-card:last-child,
+  .media-grid .project-card:last-child:nth-child(odd){
+    grid-column:auto !important;
+    aspect-ratio:16 / 9 !important;
+    width:100% !important;
+    min-height:0 !important;
+  }
+
+  .media-grid .project-content{
+    padding:18px !important;
+  }
+
+  .media-grid .project-content h3{
+    font-size:clamp(22px,3.6vw,34px) !important;
+  }
+}
+
+@media (max-width:760px) and (orientation:portrait){
+  .media-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .media-grid .project-card,
+  .media-grid .project-card:last-child,
+  .media-grid .project-card:last-child:nth-child(odd){
+    grid-column:auto !important;
+    aspect-ratio:16 / 9 !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -637,7 +682,7 @@ body.modal-open{overflow:hidden}
 
 <section class="reel wrap">
  <div class="reel-frame">
-  <iframe src="https://player.vimeo.com/video/959595041?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1"
+  <iframe src="https://player.vimeo.com/video/959595041?autoplay=1&muted=1&loop=1&autopause=0&playsinline=1&title=0&byline=0&portrait=0"
 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
 referrerpolicy="strict-origin-when-cross-origin"
 allowfullscreen
